@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkoHolic - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md border border-gray-100">
+        <div class="text-center mb-8">
+            <div class="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden shadow-lg">
+                <img src="{{ url_for('static', filename='logo.jpg') }}" alt="WorkHolic Logo" class="w-full h-full object-cover">
+            </div>
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">WorkoHolic</h1>
+            <p class="text-gray-600 font-medium">Employee Attendance & Task Tracker</p>
+            <div class="w-16 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto mt-3 rounded-full"></div>
+        </div>
+        
+        <form id="loginForm" class="space-y-6">
+            <div>
+                <label for="email" class="form-label">Email Address</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    required 
+                    class="form-input w-full focus-ring"
+                    placeholder="Enter your email address"
+                />
+            </div>
+            
+            <div>
+                <label for="password" class="form-label">Password</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    required 
+                    class="form-input w-full focus-ring"
+                    placeholder="Enter your password"
+                />
+                <p class="text-xs text-gray-500 mt-2 font-medium">First time? Create any password to set up your account</p>
+            </div>
+            
+            <button 
+                type="submit" 
+                class="btn-primary w-full py-3 px-4 text-base font-semibold focus-ring"
+            >
+                <span class="flex items-center justify-center">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                    </svg>
+                    Sign In
+                </span>
+            </button>
+        </form>
+        
+        <div id="message" class="mt-4 p-3 rounded-lg text-center hidden"></div>
+        
+        <div class="mt-8 pt-6 border-t border-gray-200">
+            <h3 class="text-sm font-semibold text-gray-700 mb-4 flex items-center">
+                <svg class="w-4 h-4 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                Demo Accounts
+            </h3>
+            <div class="space-y-3 text-sm">
+                <div class="bg-blue-50 p-3 rounded-lg border border-blue-200">
+                    <p class="font-semibold text-blue-800 mb-1">Administrator</p>
+                    <p class="text-blue-700">admin@workholic.in / admin123</p>
+                </div>
+                <div class="bg-green-50 p-3 rounded-lg border border-green-200">
+                    <p class="font-semibold text-green-800 mb-1">Employees</p>
+                    <p class="text-green-700">shreyas@adsmagnify.in, srushti@adsmagnify.in, vinay@adsmagnify.in, john@adsmagnify.in</p>
+                </div>
+                <p class="text-xs text-gray-500 font-medium text-center">First-time employees can set any password</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='login.js') }}"></script>
+</body>
+</html>
